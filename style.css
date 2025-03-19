@@ -1,0 +1,33 @@
+body {
+  font-family: 'Sarabun', sans-serif;
+  background: #f7f7f7;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.logo {
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.village-info h1 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.village-info p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
