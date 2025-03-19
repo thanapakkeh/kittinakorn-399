@@ -1,33 +1,31 @@
-body {
-  font-family: 'Sarabun', sans-serif;
-  background: #f7f7f7;
-  margin: 0;
-  padding: 20px;
-  text-align: center;
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.container {
-  max-width: 600px;
-  margin: auto;
-  background: #fff;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.logo {
-  max-width: 200px;
-  height: auto;
-  margin-bottom: 20px;
-}
-
-.village-info h1 {
-  font-size: 1.4rem;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.village-info p {
+input {
+  padding: 10px;
   font-size: 1rem;
-  margin: 5px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px;
+  background-color: #28a745;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+.message {
+  margin-top: 10px;
+  color: red;
 }
