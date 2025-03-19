@@ -43,6 +43,17 @@
       sessionStorage.removeItem('userId');
       window.location.href = 'login.html';
     }
+    function openPayment() {
+    document.getElementById("paymentSection").style.display = "block";
+    window.scrollTo({ top: document.getElementById("paymentSection").offsetTop - 20, behavior: 'smooth' });
+  }
+
+  function copyAccount() {
+    const acc = document.getElementById("accountNumber").textContent;
+    navigator.clipboard.writeText(acc).then(() => {
+      alert("คัดลอกเลขบัญชีแล้ว: " + acc);
+    });
+  }
   </script>
 </body>
 </html>
