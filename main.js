@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const res = await fetch(endpoint);
     const data = await res.json();
 
-    const slips = data.filter(row => formatId(row["บ้านเลขที่"]) === userId);
+    const slips = data.filter(row => row["บ้านเลขที่"] === userId);
 
     if (slips.length === 0) {
       slipContainer.innerHTML = "<p>ไม่พบใบแจ้งหนี้ของคุณ</p>";
@@ -24,10 +24,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       div.className = "slip-card";
       div.innerHTML = `
         <h3>ใบแจ้งหนี้ #${index + 1}</h3>
-        <p><strong>เดือน:</strong> ${row["เดือน"] || "-"}</p>
-        <p><strong>จำนวนเงิน:</strong> ${row["จำนวนเงิน"] || "-"}</p>
-        <p><strong>สถานะ:</strong> ${row["สถานะ"] || "-"}</p>
-        <p><strong>วันที่ออกใบแจ้งหนี้:</strong> ${row["วันที่"] || "-"}</p>
+        <p><strong>เดือน:</strong> ${row["สถานะค้างชำระ"] || "-"}</p>
+        <p><strong>จำนวนเงิน:</strong> ${row["จำนวนเงิน (บาท)"] || "-"}</p>
       `;
       slipContainer.appendChild(div);
     });
@@ -36,10 +34,3 @@ document.addEventListener('DOMContentLoaded', async () => {
     slipContainer.innerHTML = "<p>เกิดข้อผิดพลาดในการโหลดข้อมูล</p>";
   }
 });
-
-// แปลงรูปแบบบ้านเลขที่ เช่น "399/1" => "399001"
-function formatId(houseNo) {
-  if (!houseNo) return "";
-  const parts = houseNo.split('/');
-  return parts[0] + parts[1].padStart(3, '0');
-}
