@@ -1,6 +1,5 @@
 document.getElementById('loginForm').addEventListener('submit', function (e) {
   e.preventDefault();
-
   const userId = document.getElementById('userId').value.trim();
   const password = document.getElementById('password').value.trim();
   const messageBox = document.getElementById('loginMessage');

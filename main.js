@@ -6,8 +6,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   const slipContainer = document.getElementById('slipContainer');
-
-  // เพิ่มแสดงบ้านเลขที่
   const header = document.createElement("p");
   header.innerHTML = `<strong>บ้านเลขที่:</strong> ${userId}`;
   document.querySelector(".container").insertBefore(header, slipContainer);
@@ -39,3 +37,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     slipContainer.innerHTML = "<p>เกิดข้อผิดพลาดในการโหลดข้อมูล</p>";
   }
 });
+
+function logout() {
+  sessionStorage.clear();
+  window.location.href = "login.html";
+}

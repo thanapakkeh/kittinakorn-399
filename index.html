@@ -8,36 +8,17 @@
 </head>
 <body>
   <div class="container">
+    <img src="assets/logo.png" alt="โลโก้หมู่บ้าน" class="logo" />
     <h1>นิติบุคคลหมู่บ้านจัดสรรกิตตินคร กรีนทาวน์</h1>
     <p>399/279 ม.5 ต.บางเพรียง อ.บางบ่อ จ.สมุทรปราการ 10560</p>
     <p>เลขประจำตัวผู้เสียภาษี 0994002746323</p>
 
     <h2>ใบแจ้งหนี้ของคุณ</h2>
-    <div id="slipContainer">กำลังโหลดข้อมูล...</div>
+    <div id="slipContainer"></div>
 
-    <button onclick="openPayment()">ชำระค่าส่วนกลาง</button>
-    <button onclick="openContact()">ติดต่อสอบถาม</button>
-    <button onclick="logout()">ออกจากระบบ</button>
-
-    <div id="paymentSection" style="display:none; margin-top: 20px;">
-      <img src="assets/payment.jpg" alt="บัญชีชำระเงิน" class="payment-img" />
-      <p><strong>ธนาคารกรุงศรีฯ</strong><br>
-        ชื่อบัญชี: นิติบุคคลหมู่บ้านจัดสรร<br>
-        เลขบัญชี: <span id="accountNumber">6100003754</span>
-        <button onclick="copyAccount()">คัดลอกเลขบัญชี</button>
-      </p>
-      <p>ส่งสลิปได้ทาง LINE OpenChat:<br />
-        <a href="https://line.me/ti/g2/ZDauyxRug_VVvy_dd5uQyG8vZTed7Ix3qrhb6A" target="_blank">👉 คลิกเพื่อเข้าร่วมกลุ่ม</a>
-      </p>
-    </div>
-
-    <div id="contactSection" style="display:none; margin-top: 20px;">
-      <img src="assets/contact.jpg" alt="ติดต่อสอบถาม" class="contact-img" />
-      <p><strong>เบอร์โทร:</strong> <a href="tel:0937781000">093-7781000</a> (น้องเก่ง)</p>
-      <p>หรือสอบถามผ่าน LINE OpenChat:<br />
-        <a href="https://line.me/ti/g2/ZDauyxRug_VVvy_dd5uQyG8vZTed7Ix3qrhb6A" target="_blank">👉 คลิกเพื่อเข้าร่วมกลุ่ม</a>
-      </p>
-    </div>
+    <button onclick="window.location.href='payment.html'">💰 ชำระค่าส่วนกลาง</button>
+    <button onclick="window.location.href='contact.html'">📞 ติดต่อสอบถาม</button>
+    <button onclick="logout()">🚪 ออกจากระบบ</button>
   </div>
   <script src="main.js"></script>
 </body>
