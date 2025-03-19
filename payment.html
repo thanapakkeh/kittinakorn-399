@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ชำระค่าส่วนกลาง</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <img src="assets/logo.png" alt="โลโก้หมู่บ้าน" class="logo" />
+
+    <h2>รายละเอียดการชำระค่าส่วนกลาง</h2>
+
+    <img src="assets/payment.jpg" alt="บัญชีชำระเงิน" class="payment-img" />
+
+    <p>
+      <strong>ธนาคารกรุงศรีฯ</strong><br />
+      ชื่อบัญชี: นิติบุคคลหมู่บ้านจัดสรร<br />
+      เลขบัญชี: <span id="accountNumber">6100003754</span>
+      <button onclick="copyAccount()">คัดลอกเลขบัญชี</button>
+    </p>
+
+    <p>
+      ส่งสลิปได้ทางกลุ่ม LINE OpenChat: <br />
+      <a href="https://line.me/ti/g2/ZDauyxRug_VVvy_dd5uQyG8vZTed7Ix3qrhb6A?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank">
+        คลิกเพื่อเข้าร่วมกลุ่ม
+      </a>
+    </p>
+
+    <a href="index.html">← กลับหน้าใบแจ้งหนี้</a>
+  </div>
+
+  <script>
+    function copyAccount() {
+      const acc = document.getElementById("accountNumber").textContent;
+      navigator.clipboard.writeText(acc).then(() => {
+        alert("คัดลอกเลขบัญชีแล้ว: " + acc);
+      });
+    }
+  </script>
+</body>
+</html>
