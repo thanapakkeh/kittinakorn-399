@@ -6,10 +6,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   const slipContainer = document.getElementById('slipContainer');
-  const endpoint = "https://opensheet.elk.sh/1tqx0f9Eg9tu-OH6HbN2RmWmB4l5IpdzPd2uo58m49pw/ใบแจ้งหนี้";
 
   try {
-    const res = await fetch(endpoint);
+    const res = await fetch('data/data.json');
     const data = await res.json();
 
     const slips = data.filter(row => row["บ้านเลขที่"] === userId);
@@ -24,11 +23,12 @@ document.addEventListener('DOMContentLoaded', async () => {
       div.className = "slip-card";
       div.innerHTML = `
         <h3>ใบแจ้งหนี้ #${index + 1}</h3>
-        <p><strong>เดือน:</strong> ${row["สถานะค้างชำระ"] || "-"}</p>
-        <p><strong>จำนวนเงิน:</strong> ${row["จำนวนเงิน (บาท)"] || "-"}</p>
+        <p><strong>เดือน:</strong> ${row["สถานะค้างชำระ"]}</p>
+        <p><strong>จำนวนเงิน:</strong> ${row["จำนวนเงิน (บาท)"]} บาท</p>
       `;
       slipContainer.appendChild(div);
     });
+
   } catch (err) {
     console.error(err);
     slipContainer.innerHTML = "<p>เกิดข้อผิดพลาดในการโหลดข้อมูล</p>";
