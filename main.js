@@ -7,6 +7,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const slipContainer = document.getElementById('slipContainer');
 
+  // เพิ่มแสดงบ้านเลขที่
+  const header = document.createElement("p");
+  header.innerHTML = `<strong>บ้านเลขที่:</strong> ${userId}`;
+  document.querySelector(".container").insertBefore(header, slipContainer);
+
   try {
     const res = await fetch('data/data.json');
     const data = await res.json();
@@ -34,23 +39,3 @@ document.addEventListener('DOMContentLoaded', async () => {
     slipContainer.innerHTML = "<p>เกิดข้อผิดพลาดในการโหลดข้อมูล</p>";
   }
 });
-
-function openPayment() {
-  document.getElementById("paymentSection").style.display = "block";
-}
-
-function openContact() {
-  document.getElementById("contactSection").style.display = "block";
-}
-
-function copyAccount() {
-  const acc = document.getElementById("accountNumber").textContent;
-  navigator.clipboard.writeText(acc).then(() => {
-    alert("คัดลอกเลขบัญชีแล้ว: " + acc);
-  });
-}
-
-function logout() {
-  sessionStorage.clear();
-  window.location.href = "login.html";
-}
