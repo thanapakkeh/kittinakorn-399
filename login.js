@@ -14,9 +14,12 @@ document.getElementById('loginForm').addEventListener('submit', async function (
     const res = await fetch("https://opensheet.elk.sh/1tqx0f9Eg9tu-OH6HbN2RmWmB4l5IpdzPd2uo58m49pw/รหัสผ่าน");
     const data = await res.json();
 
-    const user = data.find(row => row.id === userId);
+    console.log(data); // ← เพิ่มดูว่า key ชื่ออะไร
 
-    if (user && user.password === password) {
+    // เปลี่ยน 'id' และ 'password' ให้ตรงกับชื่อคอลัมน์ใน Sheet
+    const user = data.find(row => row["id"] === userId);
+
+    if (user && user["password"] === password) {
       sessionStorage.setItem('userId', userId);
       window.location.href = 'index.html';
     } else {
