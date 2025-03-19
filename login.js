@@ -1,4 +1,4 @@
-document.getElementById('loginForm').addEventListener('submit', async function (e) {
+document.getElementById('loginForm').addEventListener('submit', function (e) {
   e.preventDefault();
 
   const userId = document.getElementById('userId').value.trim();
@@ -10,23 +10,14 @@ document.getElementById('loginForm').addEventListener('submit', async function (
     return;
   }
 
-  try {
-    const res = await fetch("https://opensheet.elk.sh/1tqx0f9Eg9tu-OH6HbN2RmWmB4l5IpdzPd2uo58m49pw/รหัสผ่าน");
-    const data = await res.json();
+  const allowedPrefix = "399/";
+  const allowedPassword = "123456";
 
-    console.log(data); // ← เพิ่มดูว่า key ชื่ออะไร
-
-    // เปลี่ยน 'id' และ 'password' ให้ตรงกับชื่อคอลัมน์ใน Sheet
-    const user = data.find(row => row["id"] === userId);
-
-    if (user && user["password"] === password) {
-      sessionStorage.setItem('userId', userId);
-      window.location.href = 'index.html';
-    } else {
-      messageBox.textContent = "รหัสผู้ใช้หรือรหัสผ่านไม่ถูกต้อง";
-    }
-  } catch (error) {
-    console.error(error);
-    messageBox.textContent = "เกิดข้อผิดพลาดในการเชื่อมต่อข้อมูล";
+  // เช็กว่าเป็นบ้านเลขที่ของหมู่บ้าน 399/* เท่านั้น
+  if (userId.startsWith(allowedPrefix) && password === allowedPassword) {
+    sessionStorage.setItem('userId', userId);
+    window.location.href = 'index.html';
+  } else {
+    messageBox.textContent = "รหัสผู้ใช้หรือรหัสผ่านไม่ถูกต้อง";
   }
 });
