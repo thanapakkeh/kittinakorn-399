@@ -8,16 +8,14 @@
 </head>
 <body>
   <div class="container">
-    <img src="assets/logo.png" alt="โลโก้หมู่บ้าน" class="logo" />
     <h2>เข้าสู่ระบบลูกบ้าน</h2>
     <form id="loginForm">
-      <input type="text" id="userId" placeholder="รหัสผู้ใช้ (เช่น 399001)" required />
+      <input type="text" id="userId" placeholder="กรอกบ้านเลขที่ เช่น 399/1" required />
       <input type="password" id="password" placeholder="รหัสผ่าน" required />
       <button type="submit">เข้าสู่ระบบ</button>
     </form>
-    <p id="loginMessage" class="message"></p>
+    <p id="loginMessage" class="error"></p>
   </div>
-
   <script src="login.js"></script>
 </body>
 </html>

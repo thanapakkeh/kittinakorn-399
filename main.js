@@ -34,3 +34,23 @@ document.addEventListener('DOMContentLoaded', async () => {
     slipContainer.innerHTML = "<p>เกิดข้อผิดพลาดในการโหลดข้อมูล</p>";
   }
 });
+
+function openPayment() {
+  document.getElementById("paymentSection").style.display = "block";
+}
+
+function openContact() {
+  document.getElementById("contactSection").style.display = "block";
+}
+
+function copyAccount() {
+  const acc = document.getElementById("accountNumber").textContent;
+  navigator.clipboard.writeText(acc).then(() => {
+    alert("คัดลอกเลขบัญชีแล้ว: " + acc);
+  });
+}
+
+function logout() {
+  sessionStorage.clear();
+  window.location.href = "login.html";
+}
