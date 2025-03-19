@@ -43,4 +43,9 @@ button:hover {
   border-radius: 12px;
   margin-bottom: 15px;
 }
+.contact-img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
 
