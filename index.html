@@ -17,17 +17,35 @@
     </div>
 
     <h2>ใบแจ้งหนี้ของคุณ</h2>
-    <button onclick="openPayment()">ชำระค่าส่วนกลาง</button>
-<div id="paymentSection" style="display:none; margin-top: 20px;">
-  <img src="770282.jpg" alt="ข้อมูลบัญชี" class="payment-img" />
-  <p><strong>บัญชีธนาคารกรุงศรีฯ</strong><br>
-  ชื่อบัญชี: นิติบุคคลหมู่บ้านจัดสรร<br>
-  เลขบัญชี: <span id="accountNumber">6100003754</span>
-  <button onclick="copyAccount()">คัดลอกเลขบัญชี</button></p>
+    <!-- ปุ่มชำระค่าส่วนกลาง -->
+<button onclick="openPayment()">ชำระค่าส่วนกลาง</button>
 
-  <p>ส่งสลิปได้ทางกลุ่ม LINE OpenChat: <br>
-    <a href="https://line.me/ti/g2/ZDauyxRug_VVvy_dd5uQyG8vZTed7Ix3qrhb6A?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank">
-      คลิกเพื่อเข้าร่วมกลุ่ม
+<!-- ส่วนแสดงข้อมูลการชำระ -->
+<div id="paymentSection" style="display:none; margin-top: 20px;">
+  <img src="assets/payment.jpg" alt="บัญชีชำระเงิน" class="payment-img" />
+  <p><strong>ธนาคารกรุงศรีฯ</strong><br>
+    ชื่อบัญชี: นิติบุคคลหมู่บ้านจัดสรร<br>
+    เลขบัญชี: <span id="accountNumber">6100003754</span>
+    <button onclick="copyAccount()">คัดลอกเลขบัญชี</button>
+  </p>
+  <p>
+    ส่งสลิปได้ทาง LINE OpenChat:<br>
+    <a href="https://line.me/ti/g2/ZDauyxRug_VVvy_dd5uQyG8vZTed7Ix3qrhb6A" target="_blank">
+      👉 คลิกเพื่อเข้าร่วมกลุ่ม
+    </a>
+  </p>
+</div>
+
+<!-- 🔽 ปุ่มติดต่อสอบถาม (วางใต้ปุ่มชำระค่าส่วนกลาง) -->
+<button onclick="openContact()">ติดต่อสอบถาม</button>
+
+<div id="contactSection" style="display:none; margin-top: 20px;">
+  <img src="assets/contact.jpg" alt="ติดต่อสอบถาม" class="contact-img" />
+  <p><strong>เบอร์โทร:</strong> <a href="tel:0937781000">093-7781000</a> (น้องเก่ง)</p>
+  <p>
+    หรือสอบถามผ่าน LINE OpenChat:<br>
+    <a href="https://line.me/ti/g2/ZDauyxRug_VVvy_dd5uQyG8vZTed7Ix3qrhb6A" target="_blank">
+      👉 คลิกเพื่อเข้าร่วมกลุ่ม
     </a>
   </p>
 </div>
