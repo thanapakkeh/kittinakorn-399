@@ -35,24 +35,26 @@
       margin: 10px 0 20px;
     }
 
-    input {
+    input, button {
       width: 100%;
       padding: 12px;
-      margin: 8px 0;
-      border-radius: 10px;
-      border: 1px solid #ccc;
       font-size: 1rem;
+      border-radius: 10px;
+      box-sizing: border-box;
+    }
+
+    input {
+      margin: 8px 0;
+      border: none;
+      background-color: #f0f0f0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1) inset;
     }
 
     button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 15px;
+      margin-top: 12px;
       background: #4CAF50;
       color: white;
       border: none;
-      border-radius: 10px;
-      font-size: 1rem;
       font-weight: bold;
       cursor: pointer;
       box-shadow: 0 4px 8px rgba(0,0,0,0.15);
